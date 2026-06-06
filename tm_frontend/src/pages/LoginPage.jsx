@@ -1,4 +1,5 @@
 import { FcGoogle } from "react-icons/fc";
+import { GoShieldCheck } from "react-icons/go";
 import {Link} from "react-router-dom";
 
 export default function LoginPage() {
@@ -6,10 +7,23 @@ export default function LoginPage() {
         <div className = "w-full h-screen flex">
 
             {/*left side */}
-            <div className = "w-1/2 h-screen bg-[#1A7A6E] flex flex-col items-center justify-center">
-                
+            <div className = "w-1/2 h-screen bg-[#0D4F46] flex flex-col">
+                <div className = "flex gap-5 mt-40 pl-20">
+                    <img src = "logo.png" alt="Logo" className="w-[80px] h-[80px]" />
+                    <h1 className = "text-5xl font-bold text-[#C9A84C] items-center">GoLanka</h1>
+                </div>
+
+                <div className = "pl-20 pt-10 pr-20">
+                    <p className = "text-[#F5EDD6] text-2xl">Your gateway to the pearl of the Indian Ocean. Curated experiences, seamless travel.</p>
+                </div>
+
+                <div className = "pl-25 pt-10 pr-20">
+                    <p className = "text-[#F5EDD6] text-2xl pt-7 flex items-center gap-2"><GoShieldCheck />Book hotels across all 9 provinces.</p>
+                    <p className = "text-[#F5EDD6] text-2xl pt-7 flex items-center gap-2"><GoShieldCheck />Airport transfers & tour vehicles</p>
+                    <p className = "text-[#F5EDD6] text-2xl pt-7 flex items-center gap-2"><GoShieldCheck />Guided activities & excursions</p>
+                    <p className = "text-[#F5EDD6] text-2xl pt-7 flex items-center gap-2"><GoShieldCheck />24/7 travel concierge support</p>
+                </div> 
             </div>
-                
 
             {/*right side */}
             <div className = "w-1/2 h-screen bg-white flex flex-col ">
