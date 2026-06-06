@@ -6,12 +6,13 @@ export default function Header() {
             <img src="logo.png" alt="Logo" className="w-[80px] h-[80px]" />
             <h1 className="text-5xl text-[#C9A84C] font-bold"> GoLanka </h1>
 
-            <div className="flex gap-10 ml-[300px]">
-                <Link to="/" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Home </Link>
+            <div className="flex gap-10 ml-[150px]">
+                <Link to="/*" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Home </Link>
                 <Link to="/hotels" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Hotels </Link>
-                <Link to="/deals" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Vehicles </Link>
-                <Link to="/about" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Tours </Link>
+                <Link to="/vehicles" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Vehicles </Link>
+                <Link to="/tours" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Tours </Link>
                 <Link to="/guides" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Guides </Link>
+                <Link to="/activities" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Activities </Link>
                 <Link to="/contact" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Contact </Link>
             </div>
 

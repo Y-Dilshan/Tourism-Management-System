@@ -1,4 +1,5 @@
 import Header from "../components/header";
+import Footer from "../components/footer";
 import { FaPlay } from "react-icons/fa6";
 import { FaHotel } from "react-icons/fa6";
 import { BsAirplaneEnginesFill } from "react-icons/bs";
@@ -71,35 +72,35 @@ export default function Home() {
                     <h3 className = "text-[#C9A84C] text-2xl font-bold mt-10 ml-20">WHAT WE OFFER</h3>
                     <h1 className = "text-black text-4xl ml-20 mt-5">Everything for your journey</h1>
 
-                    <div className = "w-full h- flex gap-30 mt-10 ml-20 mr-20">
+                    <div className = "w-full h- flex gap-25 mt-10 ml-20 mr-20">
                         <div className = "flex flex-col items-center">
                             <FaHotel size = {100}/>
-                            <h3 className = "text-bold text-black text-xl mt-5">Hotels & Resorts</h3>
+                            <h3 className = "font-bold text-[#C45A2A] text-xl mt-5">Hotels & Resorts</h3>
                             <p className = "text-gray-600 text -center flex items-center justify-center">Luxury to budget stays across all destinations</p>
                         </div>
 
                         <div className = "flex flex-col items-center">
                             <BsAirplaneEnginesFill size = {100}/>
-                            <h3 className = "text-bold text-black text-xl mt-5">Airport Transfers</h3>
+                            <h3 className = "font-bold text-[#C45A2A] text-xl mt-5">Airport Transfers</h3>
                             <p className = "text-gray-600 text -center flex items-center justify-center">Seamless pickup & drop from CMB airport</p>
                         </div>
 
                         <div className = "flex flex-col items-center">
                             <IoCarSport size = {100}/>
-                            <h3 className = "text-bold text-black text-xl mt-5">Tour Vehicles</h3>
+                            <h3 className = "font-bold text-[#C45A2A] text-xl mt-5">Tour Vehicles</h3>
                             <p className = "text-gray-600 text -center flex items-center justify-center">AC cars, vans & buses for day trips</p>
                         </div>
 
                         <div className = "flex flex-col items-center">
                             <GiBookCover size = {100}/>
-                            <h3 className = "text-bold text-black text-xl mt-5">Guided Tours</h3>
+                            <h3 className = "font-bold text-[#C45A2A] text-xl mt-5">Guided Tours</h3>
                             <p className = "text-gray-600 text -center flex items-center justify-center">Expertly curated experiences across the island</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <hr className = "border-[#F5EDD6] mt-10 ml-20 mr-20" />
+            <hr className = "border-[#0D4F46] mt-10 ml-20 mr-20" />
 
             {/*Popular destinations*/}
             <div>
@@ -107,27 +108,72 @@ export default function Home() {
                     <h3 className = "text-[#C9A84C] text-2xl font-bold mt-10 ml-20">POPULAR DESTINATIONS</h3>
                     <h1 className = "text-black text-4xl ml-20 mt-5">Where will you go?</h1>
 
-                    <div className = "w-full flex gap-30 mt-10 ml-20 mr-20">
-                        <div>
-                            <img />
-                            <h1></h1>
-                            <h3></h3>
+                    <div className = "w-full flex gap-10 mt-10 ml-20 mr-20 ">
+                        <div className = "flex flex-col items-center">
+                            <img src="kandy.jpg" alt="Destination 1" className="w-[340px] h-[200px] rounded-2xl object-cover" />
+                            <h1 className = "text-[#C45A2A] text-xl font-bold mt-5">Kandy</h1>
+                            <h3 className = "text-gray-600">Cultural Triangle</h3>
                         </div>
 
-                        <div>
-                            <img />
-                            <h1></h1>
-                            <h3></h3>
+                        <div className = "flex flex-col items-center">
+                            <img src="Galle.jpg" alt="Destination 2" className="w-[340px] h-[200px] rounded-2xl object-cover"/>
+                            <h1 className = "text-[#C45A2A] text-xl font-bold mt-5">Galle</h1>
+                            <h3 className = "text-gray-600">Southern Coast</h3>
                         </div>
 
-                        <div>
-                            <img />
-                            <h1></h1>
-                            <h3></h3>
+                        <div className = "flex flex-col items-center">
+                            <img src="Yala.jpg" alt="Destination 3" className="w-[340px] h-[200px] rounded-2xl object-cover"/>
+                            <h1 className = "text-[#C45A2A] text-xl font-bold mt-5">Yala</h1>
+                            <h3 className = "text-gray-600">Wildlife Safari</h3>
+                        </div>
+
+                        <div className = "flex flex-col items-center">
+                            <img src="Nuwara Eliya.jpg" alt="Destination 4" className="w-[340px] h-[200px] rounded-2xl object-cover"/>
+                            <h1 className = "text-[#C45A2A] text-xl font-bold mt-5">Nuwara Eliya</h1>
+                            <h3 className = "text-gray-600">Hill Country Tea</h3>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <hr className = "border-[#0D4F46] mt-10 ml-20 mr-20" />
+
+            {/*Rated items*/}
+
+            <div>
+                <div>
+                    <h3 className = "text-[#C9A84C] text-2xl font-bold mt-10 ml-20">TOP RATED STAYS</h3>
+                    <h1 className = "text-black text-4xl ml-20 mt-5">Featured hotels</h1>
+
+                    <div className = "w-full flex gap-10 mt-10 ml-20 mr-20">
+                        <div className = "flex flex-col items-center">
+                            <img src="Araliya Beach Resort.jpg" alt="Hotel 1" className="w-[340px] h-[200px] rounded-2xl object-cover"/>
+                            <h1 className = "text-[#C45A2A] text-xl font-bold mt-5">Araliya Beach Resort</h1>
+                            <p className = "text-gray-600 mb-10">Unawatuna, Galle</p>
+                        </div>
+
+                        <div className = "flex flex-col items-center">
+                            <img src="Theva Residency.jpg" alt="Hotel 2" className="w-[340px] h-[200px] rounded-2xl object-cover"/>
+                            <h1 className = "text-[#C45A2A] text-xl font-bold mt-5">Theva Residency</h1>
+                            <p className = "text-gray-600 mb-10">Kandy Hills</p>
+                        </div>
+
+                        <div className = "flex flex-col items-center">
+                            <img src="Eco Lodge.jpg" alt="Hotel 3" className="w-[340px] h-[200px] rounded-2xl object-cover"/>
+                            <h1 className = "text-[#C45A2A] text-xl font-bold mt-5">Saffron Lodge Sigiriya</h1>
+                            <p className = "text-gray-600 mb-10">Sigiriya, Dambulla</p>
+                        </div>
+
+                        <div className = "flex flex-col items-center">
+                            <img src="beachfront hotel.jpg" alt="Hotel 3" className="w-[340px] h-[200px] rounded-2xl object-cover"/>
+                            <h1 className = "text-[#C45A2A] text-xl font-bold mt-5">Beachfront Hotel</h1>
+                            <p className = "text-gray-600 mb-10">Gall Face, Colombo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <Footer />
         </div>
     )
 }
