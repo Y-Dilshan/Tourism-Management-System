@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/footer.jsx";
 
 export default function Header() {
     return(
@@ -25,6 +26,59 @@ export default function Header() {
                 <h1 className="text-2xl text-[#C9A84C] font-bold mt-15"> EXPERIENCES </h1>
                 <p className="text-4xl text-white">Unforgettable Activities</p>
             </div>
+
+            <div className="w-full h-screen bg-[#F5EDD6] flex flex-wrap gap-10 px-20 py-10 justify-center">
+                <div className="w-[300px] h-[300px] bg-white rounded-3xl flex flex-col items-center justify-center gap-5">
+                    <img src="Whale Watching.jpg" alt="Activity" className="w-[300px] h-[200px] rounded-3xl object-cover" />
+                    <h1 className="text-xl font-bold">Whale Watching</h1>
+                    <h3 className="text-gray-600">$45/person</h3>
+                </div>
+
+                <div className="w-[300px] h-[290px] bg-white rounded-3xl flex flex-col items-center justify-center gap-5">
+                    <img src="Safari Jeep Yala.jpg" alt="Activity" className="w-[300px] h-[200px] rounded-3xl object-cover" />
+                    <h1 className="text-xl font-bold">Safari Jeep Yala</h1>
+                    <h3 className="text-gray-600">$60/person</h3>
+                </div>
+
+                <div className="w-[300px] h-[290px] bg-white rounded-3xl flex flex-col items-center justify-center gap-5">
+                    <img src="Ayurveda Retreat.jpg" alt="Activity" className="w-[300px] h-[200px] rounded-3xl object-cover" />
+                    <h1 className="text-xl font-bold">Ayurveda Retreat</h1>
+                    <h3 className="text-gray-600">$30/session</h3>
+                </div>
+
+                <div className="w-[300px] h-[290px] bg-white rounded-3xl flex flex-col items-center justify-center gap-5">
+                    <img src="Surfing Arugam Bay.jpg" alt="Activity" className="w-[300px] h-[200px] rounded-3xl object-cover" />
+                    <h1 className="text-xl font-bold">Surfing Arugam Bay</h1>
+                    <h3 className="text-gray-600">$40/half-day</h3>
+                </div>
+
+                <div className="w-[300px] h-[290px] bg-white rounded-3xl flex flex-col items-center justify-center gap-5">
+                    <img src="Tea Factory Tour.jpg" alt="Activity" className="w-[300px] h-[200px] rounded-3xl object-cover" />
+                    <h1 className="text-xl font-bold">Tea Factory Tour</h1>
+                    <h3 className="text-gray-600">$18/person</h3>
+                </div>
+
+                <div className="w-[300px] h-[290px] bg-white rounded-3xl flex flex-col items-center justify-center gap-5">
+                    <img src="Scenic Train Ride.jpg" alt="Activity" className="w-[300px] h-[200px] rounded-3xl object-cover" />
+                    <h1 className="text-xl font-bold">Scenic Train Ride</h1>
+                    <h3 className="text-gray-600">$25/person</h3>
+                </div>
+
+                <div className="w-[300px] h-[290px] bg-white rounded-3xl flex flex-col items-center justify-center gap-5">
+                    <img src="Sigiriya Rock Climb.jpg" alt="Activity" className="w-[300px] h-[200px] rounded-3xl object-cover" />
+                    <h1 className="text-xl font-bold">Sigiriya Rock Climb</h1>
+                    <h3 className="text-gray-600">$45/person</h3>
+                </div>
+
+                <div className="w-[300px] h-[290px] bg-white rounded-3xl flex flex-col items-center justify-center gap-5">
+                    <img src="Diving Trincomalee.jpg" alt="Activity" className="w-[300px] h-[200px] rounded-3xl object-cover" />
+                    <h1 className="text-xl font-bold">Diving Trincomalee</h1>
+                    <h3 className="text-gray-600">$55/dive</h3>
+                </div>
+
+            </div>
+
+            <Footer />
         </div>
     )
 }
