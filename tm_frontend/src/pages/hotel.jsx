@@ -89,7 +89,7 @@ export default function Hotels(){
             
             {/* hotels grid */}
 
-            <div className="flex-1">
+            <div className="flex-col">
             <h2 className="text-5xl text-center font-bold my-10 text-[#0D4F46]"> Available Hotels </h2>
 
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 mx-20">
