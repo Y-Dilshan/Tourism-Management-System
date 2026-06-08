@@ -8,6 +8,7 @@ import UserDashboard from './pages/userDashboard.jsx'
 import TourPackages from './pages/tourPackages.jsx'
 import Hotels from './pages/hotel.jsx'
 import Vehicles from './pages/vehicles.jsx'
+import AdminDashboard from './pages/admin/adminDashboard.jsx'
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
           <Route path="/tours" element={<TourPackages />} />
           <Route path="/hotels" element={<Hotels />} />
           <Route path="/vehicles" element={<Vehicles />} />
+          <Route path = "admin" element={<AdminDashboard/>} />
         </Routes>
       </BrowserRouter>
     </div>
