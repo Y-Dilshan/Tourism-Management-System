@@ -51,7 +51,9 @@ export default function AdminDashboard(){
 
             {/* right side */}
             <div className = "w-[calc(100%-300px)] h-screen bg-black">
-                <div className = "w-full h-[80px] bg-[#242124] border-b-1 border-white flex items-center"><span className = "ml-10 flex text-white text-3xl font-bold">Dashboard</span></div>
+                <div className = "w-full h-[80px] bg-[#242124] border-b-1 border-white flex items-center"><span className = "ml-10 flex text-white text-3xl font-bold">Dashboard</span>
+                    <input type='text' placeholder='Search here' className = "w-[400px] h-[40px] px-4 rounded-lg bg-[#333333] text-white border border-gray-500 focus:outline-none focus:border-[#D4AF37] ml-180" />
+                </div>
 
             </div>
         </div>
