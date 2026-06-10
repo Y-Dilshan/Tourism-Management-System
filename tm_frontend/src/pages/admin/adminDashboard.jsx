@@ -12,12 +12,12 @@ import { IoSettings } from "react-icons/io5";
 
 export default function AdminDashboard(){
     return(
-        <div className = "flex">
+        <div className = "flex bg-[#F8F5EE]">
             {/* left side */}
-            <div className = "w-[300px] h-screen bg-black">
+            <div className = "w-[300px] h-screen bg-[#242124] border-r-1 border-white">
                 <div className = "flex justify-center items-center  mt-5 gap-5">
                     <img src = "logo.png" className = "w-[80px] h-[80px] ml-10" />
-                    <span className = "text-[#C9A84C] text-4xl font-bold">Go Lanka</span>
+                    <span className = "text-[#C9A84C] text-4xl font-bold mr-10">Go Lanka</span>
                 </div>
                 <span className = "text-white flex text-center items-center justify-center mt-5">Admin Panel</span>
 
@@ -44,13 +44,16 @@ export default function AdminDashboard(){
 
                 <div className = "flex justify-center items-center mt-5 gap-5">
                     <img src = "" className = "w-[80px] h-[80px] ml-10 rounded-full bg-white" />
-                    <span className = "text-white text-2xl">Admin User</span>
+                    <span className = "text-white text-xl mr-10">Admin User</span>
                 </div>
                
             </div>
 
             {/* right side */}
-            <div className = "w-[calc(100%-300px)] h-screen bg-amber-900"></div>
+            <div className = "w-[calc(100%-300px)] h-screen bg-black">
+                <div className = "w-full h-[80px] bg-[#242124] border-b-1 border-white flex items-center"><span className = "ml-10 flex text-white text-3xl font-bold">Dashboard</span></div>
+
+            </div>
         </div>
     )
 }
