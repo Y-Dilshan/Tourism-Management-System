@@ -51,10 +51,40 @@ export default function AdminDashboard(){
 
             {/* right side */}
             <div className = "w-[calc(100%-300px)] h-screen bg-black">
+                {/* top bar */}
                 <div className = "w-full h-[80px] bg-[#242124] border-b-1 border-white flex items-center"><span className = "ml-10 flex text-white text-3xl font-bold">Dashboard</span>
                     <input type='text' placeholder='Search here' className = "w-[400px] h-[40px] px-4 rounded-lg bg-[#333333] text-white border border-gray-500 focus:outline-none focus:border-[#D4AF37] ml-180" />
                 </div>
 
+                {/* cards */}
+
+                <div className = "flex gap-2 mx-10">
+                    <div className = "w-[350px] h-[100px] bg-[#242124] mt-10 shadow-2xl rounded-2xl border-t-2 border-[#C9A84C] flex flex-col ">
+                        <h1 className = "mt-2 ml-3 gap-1 text-[#C9A84C] text-[13px]">TOTAL REVENUE</h1>
+                        <span className = "mt-2 ml-3 gap-1 text-white text-[25px]">LKR 4.2M</span>
+                        <span className = "mt-2 ml-3 gap-1 text-green-500 text-[10px]">+18% this month</span>
+                    </div>
+
+                    <div className = "w-[350px] h-[100px] bg-[#242124] mt-10 shadow-2xl rounded-2xl border-t-2 border-[#C9A84C] flex flex-col ">
+                        <h1 className = "mt-2 ml-3 gap-1 text-[#C9A84C] text-[13px]">TOTAL REVENUE</h1>
+                        <span className = "mt-2 ml-3 gap-1 text-white text-[25px]">LKR 4.2M</span>
+                        <span className = "mt-2 ml-3 gap-1 text-green-500 text-[10px]">+18% this month</span>
+                    </div>
+
+                    <div className = "w-[350px] h-[100px] bg-[#242124] mt-10 shadow-2xl rounded-2xl border-t-2 border-[#C9A84C] flex flex-col ">
+                        <h1 className = "mt-2 ml-3 gap-1 text-[#C9A84C] text-[13px]">TOTAL REVENUE</h1>
+                        <span className = "mt-2 ml-3 gap-1 text-white text-[25px]">LKR 4.2M</span>
+                        <span className = "mt-2 ml-3 gap-1 text-green-500 text-[10px]">+18% this month</span>
+                    </div>
+
+                    <div className = "w-[350px] h-[100px] bg-[#242124] mt-10 shadow-2xl rounded-2xl border-t-2 border-[#C9A84C] flex flex-col ">
+                        <h1 className = "mt-2 ml-3 gap-1 text-[#C9A84C] text-[13px]">TOTAL REVENUE</h1>
+                        <span className = "mt-2 ml-3 gap-1 text-white text-[25px]">LKR 4.2M</span>
+                        <span className = "mt-2 ml-3 gap-1 text-green-500 text-[10px]">+18% this month</span>
+                    </div>
+                </div>
+
+                
             </div>
         </div>
     )
