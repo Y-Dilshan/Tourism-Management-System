@@ -30,7 +30,7 @@ function App() {
           <Route path="/guides" element={<Guides/>} />
         
           <Route path="/admin" element={<AdminDashboard/>} />
-            <Route path="/admin vehicles" element={<AdminVehicles/>} />
+            <Route path="/admin/vehicles" element={<AdminVehicles/>} />
         </Routes>
       </BrowserRouter>
     </div>
