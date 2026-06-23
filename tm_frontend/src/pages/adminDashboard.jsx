@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link, Outlet} from 'react-router-dom'
 import { MdSpaceDashboard } from "react-icons/md";
 import { RiContactsBook3Fill } from "react-icons/ri";
 import { LiaHotelSolid } from "react-icons/lia";
@@ -84,7 +84,7 @@ export default function AdminDashboard(){
                     </div>
                 </div>
 
-                
+                <Outlet />
             </div>
         </div>
     )

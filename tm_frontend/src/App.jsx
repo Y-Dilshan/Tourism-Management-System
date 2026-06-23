@@ -9,6 +9,7 @@ import TourPackages from './pages/tourPackages.jsx'
 import Hotels from './pages/hotel.jsx'
 import Vehicles from './pages/vehicles.jsx'
 import AdminDashboard from './pages/adminDashboard.jsx'
+import AdminVehicles from './pages/admin/adminVehicle.jsx';
 import Guides from "./pages/guides.jsx";
 
 function App() {
@@ -26,8 +27,10 @@ function App() {
           <Route path="/tours" element={<TourPackages />} />
           <Route path="/hotels" element={<Hotels />} />
           <Route path="/vehicles" element={<Vehicles />} />
-          <Route path="/admin" element={<AdminDashboard/>} />
           <Route path="/guides" element={<Guides/>} />
+        
+          <Route path="/admin" element={<AdminDashboard/>} />
+          <Route path="/admin vehicles" element={<AdminVehicles/>} />
         </Routes>
       </BrowserRouter>
     </div>
