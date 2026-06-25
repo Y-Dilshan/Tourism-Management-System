@@ -32,27 +32,15 @@ export default function AdminHotels() {
             {/* Header */}
             <div className="flex justify-between items-center mb-8">
                 <div>
-                    <h1 className="text-4xl font-bold text-[#0D4F46]">
-                        Hotel Management
-                    </h1>
-                    <p className="text-gray-500 mt-2">
-                        Manage all partner hotels
-                    </p>
+                    <h1 className="text-4xl font-bold text-[#0D4F46]"> Hotel Management </h1>
+                    <p className="text-gray-500 mt-2"> Manage all partner hotels </p>
                 </div>
-
-                <button className="bg-[#C9A84C] hover:bg-[#b9983f] px-5 py-3 rounded-xl font-semibold flex items-center gap-2">
-                    <FaPlus />
-                    Add Hotel
-                </button>
+                <button className="bg-[#C9A84C] hover:bg-[#b9983f] px-5 py-3 rounded-xl font-semibold flex items-center gap-2"><FaPlus /> Add Hotel </button>
             </div>
 
             {/* Search */}
             <div className="mb-6">
-                <input
-                    type="text"
-                    placeholder="Search hotels..."
-                    className="w-full md:w-[400px] border border-gray-300 rounded-xl p-3 outline-none focus:border-[#0D4F46]"
-                />
+                <input type="text" placeholder="Search hotels..." className="w-full md:w-[400px] border border-gray-300 rounded-xl p-3 outline-none focus:border-[#0D4F46]"/>
             </div>
 
             {/* Table */}
@@ -72,47 +60,24 @@ export default function AdminHotels() {
 
                     <tbody>
                         {hotels.map((hotel) => (
-                            <tr
-                                key={hotel.id}
-                                className="border-b hover:bg-gray-50"
-                            >
+                            <tr key={hotel.id}className="border-b hover:bg-gray-50">
                                 <td className="p-4">
                                     <div className="flex items-center gap-3">
-                                        <img
-                                            src={hotel.image}
-                                            alt={hotel.name}
-                                            className="w-14 h-14 rounded-lg object-cover"
-                                        />
-                                        <span className="font-semibold">
-                                            {hotel.name}
-                                        </span>
+                                        <img src={hotel.image} alt={hotel.name} className="w-14 h-14 rounded-lg object-cover"/>
+                                        <span className="font-semibold"> {hotel.name} </span>
                                     </div>
                                 </td>
-
-                                <td className="p-4">
-                                    {hotel.location}
-                                </td>
-
-                                <td className="p-4">
-                                    {hotel.rooms}
-                                </td>
-
-                                <td className="p-4">
-                                    ⭐ {hotel.rating}
-                                </td>
-
-                                <td className="p-4">
-                                    Rs. {hotel.price}
-                                </td>
-
+                                <td className="p-4"> {hotel.location} </td>
+                                <td className="p-4"> {hotel.rooms} </td>
+                                <td className="p-4"> ⭐ {hotel.rating} </td>
+                                <td className="p-4"> Rs. {hotel.price} </td>
                                 <td className="p-4">
                                     <span
                                         className={`px-3 py-1 rounded-full text-sm font-medium ${
                                             hotel.status === "Available"
                                                 ? "bg-green-100 text-green-700"
                                                 : "bg-red-100 text-red-700"
-                                        }`}
-                                    >
+                                        }`}>
                                         {hotel.status}
                                     </span>
                                 </td>
@@ -133,7 +98,6 @@ export default function AdminHotels() {
                     </tbody>
                 </table>
             </div>
-
         </div>
     );
 }
