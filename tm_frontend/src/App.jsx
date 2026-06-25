@@ -11,6 +11,7 @@ import Vehicles from './pages/vehicles.jsx'
 import AdminDashboard from './pages/adminDashboard.jsx'
 import AdminVehicles from './pages/admin/adminVehicle.jsx';
 import Guides from "./pages/guides.jsx";
+import AdminHotels from './pages/admin/adminHotel.jsx';
 
 function App() {
   
@@ -31,6 +32,7 @@ function App() {
         
           <Route path="/admin" element={<AdminDashboard/>} />
             <Route path="/admin/vehicles" element={<AdminVehicles/>} />
+            <Route path="/admin/hotels" element={<AdminHotels/>} />
         </Routes>
       </BrowserRouter>
     </div>
