@@ -14,6 +14,7 @@ import Guides from "./pages/guides.jsx";
 import AdminHotels from './pages/admin/adminHotel.jsx';
 import AdminGuides from './pages/admin/adminGuieds.jsx';
 import Contact from './pages/contact.jsx';
+import AdminContact from './pages/admin/adminContact.jsx';
 
 function App() {
   
@@ -37,6 +38,7 @@ function App() {
             <Route path="/admin/vehicles" element={<AdminVehicles/>} />
             <Route path="/admin/hotels" element={<AdminHotels/>} />
             <Route path="/admin/guides" element={<AdminGuides/>} />
+            <Route path="/admin/contact" element={<AdminContact/>} />
         </Routes>
       </BrowserRouter>
     </div>
