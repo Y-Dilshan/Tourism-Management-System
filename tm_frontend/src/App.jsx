@@ -35,10 +35,10 @@ function App() {
           <Route path="/contact" element={<Contact/>} />
         
           <Route path="/admin" element={<AdminDashboard/>} />
-            <Route path="/admin/vehicles" element={<AdminVehicles/>} />
-            <Route path="/admin/hotels" element={<AdminHotels/>} />
-            <Route path="/admin/guides" element={<AdminGuides/>} />
-            <Route path="/admin/contact" element={<AdminContact/>} />
+            <Route path="/admin-vehicles" element={<AdminVehicles/>} />
+            <Route path="/admin-hotels" element={<AdminHotels/>} />
+            <Route path="/admin-guides" element={<AdminGuides/>} />
+            <Route path="/admin-contact" element={<AdminContact/>} />
         </Routes>
       </BrowserRouter>
     </div>
