@@ -17,6 +17,7 @@ import Contact from './pages/contact.jsx';
 import AdminContact from './pages/admin/adminContact.jsx';
 import AddHotel from './pages/admin/adminAddHotel.jsx';
 import AddGuide from './pages/admin/adminAddGuides.jsx';
+import AdminAddVehicle from './pages/admin/adminAddVehicle.jsx';
 
 function App() {
   
@@ -43,6 +44,7 @@ function App() {
             <Route path="/admin-contact" element={<AdminContact/>} />
             <Route path="/admin-add-hotel" element={<AddHotel/>} />
             <Route path="/admin-add-guide" element={<AddGuide/>} />
+            <Route path="/admin-add-vehicle" element={<AdminAddVehicle/>} />
         </Routes>
       </BrowserRouter>
     </div>
