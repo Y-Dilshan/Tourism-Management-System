@@ -1,5 +1,4 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
-
 import { MdSpaceDashboard } from "react-icons/md";
 import { RiContactsBook3Fill } from "react-icons/ri";
 import { LiaHotelSolid } from "react-icons/lia";
@@ -39,10 +38,10 @@ export default function AdminDashboard() {
         </div>
 
         {/* MAIN */}
-        <div className="mb-6">
-          <h2 className="text-[#D4AF37] font-bold mb-3"> MAIN </h2>
+        <div className="mb-4">
+          <h2 className="text-[#D4AF37] font-bold"> MAIN </h2>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-[5px]">
             <NavLink to="/admin/dashboard" className={navLinkClass}> <MdSpaceDashboard size={20} /> Dashboard </NavLink>
             <NavLink to="/admin/bookings" className={navLinkClass}> <RiContactsBook3Fill size={20} /> Bookings </NavLink>
             <NavLink to="/admin/hotels" className={navLinkClass}> <LiaHotelSolid size={20} /> Hotels </NavLink>
@@ -54,9 +53,9 @@ export default function AdminDashboard() {
 
         {/* MANAGEMENT */}
         <div>
-          <h2 className="text-[#D4AF37] font-bold mb-3"> MANAGEMENT </h2>
+          <h2 className="text-[#D4AF37] font-bold"> MANAGEMENT </h2>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-[5px]">
             <NavLink to="/admin/users" className={navLinkClass}> <FaUsers size={20} /> Users </NavLink>
             <NavLink to="/admin/reviews" className={navLinkClass}> <MdReviews size={20} /> Reviews </NavLink>
             <NavLink to="/admin/reports" className={navLinkClass}> <TbReportSearch size={20} /> Reports </NavLink>
@@ -65,11 +64,11 @@ export default function AdminDashboard() {
         </div>
 
         {/* Admin Profile */}
-        <div className="absolute bottom-6 left-0 w-full px-6">
-          <div className="border-t border-[#2A2A2A] pt-4 flex items-center gap-4">
+        <div className="absolute bottom-6 left-0 w-full px-6 mt-2">
+          <div className="border-t border-[#2A2A2A] flex items-center gap-4">
             <img src="/admin.jpg" alt="admin" className="w-14 h-14 rounded-full bg-gray-600"/>
 
-            <div>
+            <div className="flex flex-col gap-2">
               <h3 className="text-white font-semibold"> Admin User </h3>
               <p className="text-gray-400 text-sm"> System Administrator </p>
             </div>
