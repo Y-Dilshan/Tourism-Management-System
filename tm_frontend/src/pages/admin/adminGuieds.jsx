@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 
 export default function AdminGuides() {
@@ -34,7 +35,7 @@ export default function AdminGuides() {
                     <h1 className="text-4xl font-bold text-[#0D4F46]"> Guide Management </h1>
                     <p className="text-gray-500 mt-2"> Manage all registered tour guides </p>
                 </div>
-                <button className="bg-[#C9A84C] hover:bg-[#b9983f] px-5 py-3 rounded-xl font-semibold flex items-center gap-2"> <FaPlus /> Add Guide </button>
+                <Link to="/admin/add-guide" className="bg-[#C9A84C] hover:bg-[#b9983f] px-5 py-3 rounded-xl font-semibold flex items-center gap-2"> <FaPlus /> Add Guide </Link>
             </div>
 
             {/* Search */}
