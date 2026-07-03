@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 
 export default function AdminHotels() {
@@ -35,7 +36,9 @@ export default function AdminHotels() {
                     <h1 className="text-4xl font-bold text-[#0D4F46]"> Hotel Management </h1>
                     <p className="text-gray-500 mt-2"> Manage all partner hotels </p>
                 </div>
-                <button className="bg-[#C9A84C] hover:bg-[#b9983f] px-5 py-3 rounded-xl font-semibold flex items-center gap-2"><FaPlus /> Add Hotel </button>
+                <Link to="/admin/add-hotel">
+                    <button className="bg-[#C9A84C] hover:bg-[#b9983f] px-5 py-3 rounded-xl font-semibold flex items-center gap-2"><FaPlus /> Add Hotel </button>
+                </Link>
             </div>
 
             {/* Search */}

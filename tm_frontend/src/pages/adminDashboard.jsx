@@ -47,7 +47,7 @@ export default function AdminDashboard() {
             <NavLink to="/admin/hotels" className={navLinkClass}> <LiaHotelSolid size={20} /> Hotels </NavLink>
             <NavLink to="/admin/vehicles" className={navLinkClass}> <FaCar size={20} /> Vehicles </NavLink>
             <NavLink to="/admin/packages" className={navLinkClass}> <IoBook size={20} /> Tour Packages </NavLink>
-            <NavLink to="/admin/activities" className={navLinkClass}> <LuActivity size={20} /> Activities </NavLink>
+            <NavLink to="/admin/guides" className={navLinkClass}> <LuActivity size={20} /> Guides </NavLink>
           </div>
         </div>
 
@@ -60,6 +60,7 @@ export default function AdminDashboard() {
             <NavLink to="/admin/reviews" className={navLinkClass}> <MdReviews size={20} /> Reviews </NavLink>
             <NavLink to="/admin/reports" className={navLinkClass}> <TbReportSearch size={20} /> Reports </NavLink>
             <NavLink to="/admin/settings" className={navLinkClass}> <IoSettings size={20} /> Settings </NavLink>
+            
           </div>
         </div>
 
