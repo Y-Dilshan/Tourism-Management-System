@@ -42,7 +42,6 @@ function App() {
         {/* ================= Admin Routes ================= */}
         <Route path="/admin" element={<AdminDashboard />}>
           {/* Default page when visiting /admin */}
-          <Route index element={<AdminVehicles />} />
           <Route path="vehicles" element={<AdminVehicles />} />
           <Route path="hotels" element={<AdminHotels />} />
           <Route path="guides" element={<AdminGuides />} />
