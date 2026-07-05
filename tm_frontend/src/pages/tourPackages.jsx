@@ -78,12 +78,7 @@ export default function TourPackages(){
                 </div>
 
                 <div className="flex gap-5 mr-20">
-                    <Link
-                      to="/"
-                      className="w-[150px] h-[40px] bg-[#C9A84C] hover:bg-[#F5EDD6] text-black text-lg font-bold rounded-3xl ml-20 flex items-center justify-center cursor-pointer"
-                    >
-                      My Bookings
-                    </Link>
+                    <Link to="/bookings" className="w-[150px] h-[40px] bg-[#C9A84C] hover:bg-[#F5EDD6] text-black text-lg font-bold rounded-3xl ml-20 flex items-center justify-center cursor-pointer"> My Bookings </Link>
                 </div>
             </div>
 
