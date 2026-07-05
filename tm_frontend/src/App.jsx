@@ -28,7 +28,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* ================= User Routes ================= */}
-        <Route path="/" element={<Home />} />
+        <Route path="/*" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<RegisterPage />} />
         <Route path="/activities" element={<ActivitiesPage />} />
@@ -52,7 +52,7 @@ function App() {
         </Route>
 
         {/* ================= 404 Page ================= */}
-        <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+        {/* <Route path="*" element={<h1>404 - Page Not Found</h1>} /> */}
       </Routes>
     </BrowserRouter>
   );
