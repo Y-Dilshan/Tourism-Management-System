@@ -63,7 +63,7 @@ export default function Hotels(){
   ];
 
     return(
-        <div>
+        <div className="w-full h-full bg-[#F5EDD6]">
             <div className="w-full h-[100px] bg-black flex items-center pl-20 gap-5">
                 <img src="logo.png" alt="Logo" className="w-[80px] h-[80px]" />
                 <h1 className="text-5xl text-[#C9A84C] font-bold"> GoLanka </h1>
@@ -83,8 +83,9 @@ export default function Hotels(){
             </div>
 
             <div className = "w-full h-[200px] bg-black flex flex-col pl-20 gap-5">
-                <h1 className="text-2xl text-[#C9A84C] font-bold mt-15"> EXPERIENCES </h1>
-                <p className="text-4xl text-white">Unforgettable Activities</p>
+                <h1 className="text-2xl text-[#C9A84C] font-bold mt-1"> ACCOMMODATION </h1>
+                <p className="text-4xl text-white">Find your perfect stay</p>
+                <p className = "text-gray-300 text-xl">280+ hotels, guesthouses & resorts across Sri Lanka</p>
             </div>
             
             {/* hotels grid */}
