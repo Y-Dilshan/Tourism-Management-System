@@ -3,7 +3,7 @@ import Footer from "../components/footer.jsx";
 
 export default function ActivitiesPage() {
     return(
-        <div>
+        <div className="w-full h-full bg-[#F5EDD6]">
             {/* header */}
             <div className="w-full h-[100px] bg-black flex items-center pl-20 gap-5">
                 <img src="logo.png" alt="Logo" className="w-[80px] h-[80px]" />
@@ -80,10 +80,7 @@ export default function ActivitiesPage() {
 
             </div>
             {/* Footer */}
-            <div className = "pt-0">
                 <Footer />
-            </div>
-            
         </div>
     )
 }

@@ -114,7 +114,7 @@ export default function Vehicles(){
 
 
     return(
-        <div>
+        <div className="w-full h-full bg-[#F5EDD6]">
             <div className="w-full h-[100px] bg-black flex items-center pl-20 gap-5">
                 <img src="logo.png" alt="Logo" className="w-[80px] h-[80px]" />
                 <h1 className="text-5xl text-[#C9A84C] font-bold"> GoLanka </h1>
