@@ -2,7 +2,7 @@ import {FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane, FaHeadset
 
 export default function Contact() {
   return (
-    <div className="bg-gradient-to-b from-[#f7faf9] via-white to-[#eef6f4] min-h-screen">
+    <div className="bg-[#F5EDD6] from-[#f7faf9] via-white to-[#eef6f4] min-h-screen">
       {/* HERO SECTION */}
       <div className="relative bg-gradient-to-r from-[#0D4F46] via-[#17675B] to-[#0D4F46] text-white overflow-hidden">
         <div className="absolute w-96 h-96 bg-[#C9A84C]/20 rounded-full -top-20 -left-20 blur-3xl"></div>
@@ -18,7 +18,7 @@ export default function Contact() {
       </div>
 
       {/* MAIN SECTION */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-20 ">
         <div className="grid lg:grid-cols-2 gap-10">
           {/* LEFT SIDE */}
           <div>

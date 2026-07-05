@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import Footer from "../components/footer.jsx";
 
-export default function Header() {
+export default function ActivitiesPage() {
     return(
         <div>
+            {/* header */}
             <div className="w-full h-[100px] bg-black flex items-center pl-20 gap-5">
                 <img src="logo.png" alt="Logo" className="w-[80px] h-[80px]" />
                 <h1 className="text-5xl text-[#C9A84C] font-bold"> GoLanka </h1>
@@ -27,6 +28,7 @@ export default function Header() {
                 <p className="text-4xl text-white">Unforgettable Activities</p>
             </div>
 
+            {/* cards */}
             <div className="w-full h-screen bg-[#F5EDD6] flex flex-wrap gap-10 px-20 py-10 justify-center">
                 <div className="w-[300px] h-[300px] bg-white rounded-3xl flex flex-col items-center justify-center gap-5">
                     <img src="Whale Watching.jpg" alt="Activity" className="w-[300px] h-[200px] rounded-3xl object-cover" />
@@ -77,8 +79,11 @@ export default function Header() {
                 </div>
 
             </div>
-
-            <Footer />
+            {/* Footer */}
+            <div className = "pt-0">
+                <Footer />
+            </div>
+            
         </div>
     )
 }
