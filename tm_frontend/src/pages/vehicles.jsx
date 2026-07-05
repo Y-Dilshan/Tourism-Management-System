@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Footer from "../components/footer.jsx";
-import { FaSearch, FaStar, FaWifi, FaSwimmingPool } from "react-icons/fa";
+import { FaStar, FaUserFriends, FaCogs, FaGasPump } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 
 export default function Vehicles(){
@@ -16,8 +16,7 @@ export default function Vehicles(){
     transmission: "Automatic",
     fuel: "Hybrid",
     rating: 4.6,
-    image:
-      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a",
+    image: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a",
   },
   {
     id: 2,
@@ -29,8 +28,7 @@ export default function Vehicles(){
     transmission: "Automatic",
     fuel: "Petrol",
     rating: 4.5,
-    image:
-      "https://images.unsplash.com/photo-1590362891991-f776e747a588",
+    image: "https://images.unsplash.com/photo-1590362891991-f776e747a588",
   },
   {
     id: 3,
@@ -42,8 +40,7 @@ export default function Vehicles(){
     transmission: "Automatic",
     fuel: "Diesel",
     rating: 4.8,
-    image:
-      "https://images.unsplash.com/photo-1605514449459-5f5a1c1c9b7c",
+    image: "https://images.unsplash.com/photo-1605514449459-5f5a1c1c9b7c",
   },
   {
     id: 4,
@@ -55,8 +52,7 @@ export default function Vehicles(){
     transmission: "Manual",
     fuel: "Diesel",
     rating: 4.4,
-    image:
-      "https://images.unsplash.com/photo-1625047509168-5b0b7f2c9a5d",
+    image: "https://images.unsplash.com/photo-1625047509168-5b0b7f2c9a5d",
   },
   {
     id: 5,
@@ -68,8 +64,7 @@ export default function Vehicles(){
     transmission: "Automatic",
     fuel: "Diesel",
     rating: 4.9,
-    image:
-      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a",
+    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6",
   },
   {
     id: 6,
@@ -81,8 +76,7 @@ export default function Vehicles(){
     transmission: "Automatic",
     fuel: "Petrol",
     rating: 4.7,
-    image:
-      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6",
+    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf",
   },
   {
     id: 7,
@@ -94,8 +88,7 @@ export default function Vehicles(){
     transmission: "Manual",
     fuel: "Diesel",
     rating: 4.6,
-    image:
-      "https://images.unsplash.com/photo-1601924582970-9238bcb495d4",
+    image: "https://images.unsplash.com/photo-1601924582970-9238bcb495d4",
   },
   {
     id: 8,
@@ -107,11 +100,9 @@ export default function Vehicles(){
     transmission: "Manual",
     fuel: "Diesel",
     rating: 4.8,
-    image:
-      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957",
+    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957",
   },
 ];
-
 
     return(
         <div className="w-full h-full bg-[#F5EDD6]">
@@ -120,7 +111,7 @@ export default function Vehicles(){
                 <h1 className="text-5xl text-[#C9A84C] font-bold"> GoLanka </h1>
 
                 <div className="flex gap-10 ml-[400px]">
-                    <Link to="/*" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Home </Link>
+                    <Link to="/" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Home </Link>
                     <Link to="/hotels" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Hotels </Link>
                     <Link to="/vehicles" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Vehicles </Link>
                     <Link to="/activities" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Activities </Link>
@@ -129,55 +120,58 @@ export default function Vehicles(){
                 </div>
 
                 <div className="flex gap-5 mr-20">
-                    <button className="w-[150px] h-[40px] bg-[#C9A84C] hover:bg-[#F5EDD6] text-black text-lg font-bold rounded-3xl ml-20 cursor-pointer"><Link to="/">My Bookings</Link></button>
+                    <Link
+                      to="/"
+                      className="w-[150px] h-[40px] bg-[#C9A84C] hover:bg-[#F5EDD6] text-black text-lg font-bold rounded-3xl ml-20 flex items-center justify-center cursor-pointer"
+                    >
+                      My Bookings
+                    </Link>
                 </div>
             </div>
 
-            <div className = "w-full h-[200px] bg-black flex flex-col pl-20 gap-5">
+            <div className="w-full h-[200px] bg-black flex flex-col pl-20 gap-5">
                 <h1 className="text-2xl text-[#C9A84C] font-bold mt-10"> TRANSPORTATION </h1>
                 <p className="text-4xl text-white">Airport Transfers & Tour Vehicles</p>
-                <p className = "text-white">BIA Katunayake ↔ Hotel · City tours · Countryside excursions</p>
+                <p className="text-white">BIA Katunayake ↔ Hotel · City tours · Countryside excursions</p>
             </div>
 
-            {/* vehicles grids */}
+            {/* vehicles grid */}
+            <div className="flex-col">
+                <h2 className="text-5xl text-center font-bold my-10 text-[#0D4F46]"> Available Vehicles </h2>
 
-             <div className="flex-col">
-                        <h2 className="text-5xl text-center font-bold my-10 text-[#0D4F46]"> Available Hotels </h2>
-            
-                        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 mx-20">
-                          {vehicles.map((vehicle) => (
-                            <div key={vehicle.id} className="bg-white rounded-xl overflow-hidden shadow-2xl hover:shadow-xl transition duration-300" >
-                              <img src={vehicle.image} alt={vehicle.name} className="w-full h-56 object-cover" />
-            
-                              <div className="p-5">
-                                <h3 className="text-xl font-bold"> {vehicle.name} </h3>
-            
-                                <div className="flex items-center gap-1 text-gray-500 mt-2"> <MdLocationOn /> {vehicle.location} </div>
-            
-                                <div className="flex items-center gap-2 mt-3"> <FaStar className="text-yellow-500" /> <span>{vehicle.rating}</span> </div>
-            
-                                <div className="flex gap-3 mt-4">
-                                  <div className="flex items-center gap-1 text-[#C45A2A] text-sm"> <FaWifi /> WiFi </div>
-            
-                                  <div className="flex items-center gap-1 text-[#C45A2A] text-sm"> <FaSwimmingPool /> Pool </div>
-                                </div>
-            
-                                <div className="flex justify-between items-center mt-5">
-                                  <div>
-                                    <span className="text-2xl font-bold text-[#0D4F46]"> ${vehicle.price} </span>
-            
-                                    <p className="text-sm text-gray-500"> per night </p>
-                                  </div>
-            
-                                  <button className="bg-[#0D4F46] text-white font-bold px-4 py-2 rounded-lg hover:bg-[#1A7A6E]"> Book Now </button>
-                                </div>
-                              </div>
-                            </div>
-                          ))}
+                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 mx-20">
+                  {vehicles.map((vehicle) => (
+                    <div key={vehicle.id} className="bg-white rounded-xl overflow-hidden shadow-2xl hover:shadow-xl transition duration-300">
+                      <img src={vehicle.image} alt={vehicle.name} className="w-full h-56 object-cover" />
+
+                      <div className="p-5">
+                        <h3 className="text-xl font-bold"> {vehicle.name} </h3>
+
+                        <div className="flex items-center gap-1 text-gray-500 mt-2"> <MdLocationOn /> {vehicle.location} </div>
+
+                        <div className="flex items-center gap-2 mt-3"> <FaStar className="text-yellow-500" /> <span>{vehicle.rating}</span> </div>
+
+                        <div className="flex gap-3 mt-4 flex-wrap">
+                          <div className="flex items-center gap-1 text-[#C45A2A] text-sm"> <FaUserFriends /> {vehicle.seats} seats </div>
+                          <div className="flex items-center gap-1 text-[#C45A2A] text-sm"> <FaCogs /> {vehicle.transmission} </div>
+                          <div className="flex items-center gap-1 text-[#C45A2A] text-sm"> <FaGasPump /> {vehicle.fuel} </div>
+                        </div>
+
+                        <div className="flex justify-between items-center mt-5">
+                          <div>
+                            <span className="text-2xl font-bold text-[#0D4F46]"> ${vehicle.pricePerDay} </span>
+                            <p className="text-sm text-gray-500"> per day </p>
+                          </div>
+
+                          <button className="bg-[#0D4F46] text-white font-bold px-4 py-2 rounded-lg hover:bg-[#1A7A6E]"> Book Now </button>
                         </div>
                       </div>
-            
-                      <div className = "mt-10"> <Footer /> </div>
+                    </div>
+                  ))}
+                </div>
             </div>
+
+            <div className="mt-10"> <Footer /> </div>
+        </div>
     )
 }

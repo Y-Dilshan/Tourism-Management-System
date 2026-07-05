@@ -12,6 +12,7 @@ import Hotels from "./pages/hotel.jsx";
 import Vehicles from "./pages/vehicles.jsx";
 import Guides from "./pages/guides.jsx";
 import Contact from "./pages/contact.jsx";
+import MyBookings from "./pages/myBookins.jsx";
 
 // Admin Pages
 import AdminDashboard from "./pages/adminDashboard.jsx";
@@ -38,6 +39,7 @@ function App() {
         <Route path="/vehicles" element={<Vehicles />} />
         <Route path="/guides" element={<Guides />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/bookings" element={<MyBookings />} />
 
         {/* ================= Admin Routes ================= */}
         <Route path="/admin" element={<AdminDashboard />}>
