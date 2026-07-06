@@ -29,7 +29,7 @@ export default function AdminDashboard() {
 
         {/* Logo */}
         <div className="mb-8 flex items-center gap-4">
-          <img src="/logo.png" alt="logo" className="w-[80px] h-[80px]"/>
+          <img src="/logo.png" alt="logo" className="w-[80px] h-[80px]" />
 
           <div>
             <h1 className="text-[#D4AF37] text-3xl font-bold"> GO LANKA </h1>
@@ -60,14 +60,13 @@ export default function AdminDashboard() {
             <NavLink to="/admin/reviews" className={navLinkClass}> <MdReviews size={20} /> Reviews </NavLink>
             <NavLink to="/admin/reports" className={navLinkClass}> <TbReportSearch size={20} /> Reports </NavLink>
             <NavLink to="/admin/settings" className={navLinkClass}> <IoSettings size={20} /> Settings </NavLink>
-            
           </div>
         </div>
 
         {/* Admin Profile */}
         <div className="absolute bottom-6 left-0 w-full px-6 mt-2">
           <div className="border-t border-[#2A2A2A] flex items-center gap-4">
-            <img src="/admin.jpg" alt="admin" className="w-14 h-14 rounded-full bg-gray-600"/>
+            <img src="/admin.jpg" alt="admin" className="w-14 h-14 rounded-full bg-gray-600" />
 
             <div className="flex flex-col gap-2">
               <h3 className="text-white font-semibold"> Admin User </h3>
@@ -123,7 +122,7 @@ export default function AdminDashboard() {
               <div className="flex justify-between items-center px-8 py-6 border-b border-[#2A2A2A]">
                 <h2 className="text-2xl text-white font-semibold"> Recent Bookings </h2>
 
-                <input type="text" placeholder="Search Bookings..." className="bg-[#1F1F1F] text-white px-4 py-2 rounded-xl border border-[#333333] outline-none focus:border-[#D4AF37]"/>
+                <input type="text" placeholder="Search Bookings..." className="bg-[#1F1F1F] text-white px-4 py-2 rounded-xl border border-[#333333] outline-none focus:border-[#D4AF37]" />
               </div>
 
               <table className="w-full">

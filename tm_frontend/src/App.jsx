@@ -44,7 +44,11 @@ function App() {
 
         {/* ================= Admin Routes ================= */}
         <Route path="/admin" element={<AdminDashboard />}>
-          {/* Default page when visiting /admin */}
+          {/* Default page when visiting /admin exactly */}
+          <Route index element={<></>} />
+          {/* Explicit /admin/dashboard route so it stays on AdminDashboard */}
+          <Route path="dashboard" element={<></>} />
+
           <Route path="vehicles" element={<AdminVehicles />} />
           <Route path="hotels" element={<AdminHotels />} />
           <Route path="guides" element={<AdminGuides />} />
