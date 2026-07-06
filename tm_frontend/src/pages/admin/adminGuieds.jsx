@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
+import { FaPlus, FaEdit, FaTrash, FaSearch } from "react-icons/fa";
 
 export default function AdminGuides() {
     const [guides] = useState([
@@ -27,65 +27,92 @@ export default function AdminGuides() {
     ]);
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
-
-            {/* Header */}
-            <div className="flex justify-between items-center mb-8">
-                <div>
-                    <h1 className="text-4xl font-bold text-[#0D4F46]"> Guide Management </h1>
-                    <p className="text-gray-500 mt-2"> Manage all registered tour guides </p>
+        <div>
+            {/* Header — boarding-pass style */}
+            <div className="relative flex bg-white rounded-2xl border border-[#0D4F46]/15 shadow-sm overflow-hidden mb-8">
+                <div className="flex-1 p-8">
+                    <p className="uppercase tracking-[0.25em] text-xs text-[#1A7A6E] font-semibold mb-2"> Admin · Crew Registry </p>
+                    <h1 className="font-serif text-4xl text-[#0D2A24]"> Guide Management </h1>
+                    <p className="text-[#4B5F59] mt-2"> Manage all registered tour guides </p>
                 </div>
-                <Link to="/admin/add-guide" className="bg-[#C9A84C] hover:bg-[#b9983f] px-5 py-3 rounded-xl font-semibold flex items-center gap-2"> <FaPlus /> Add Guide </Link>
+
+                <div className="relative flex flex-col items-center justify-center px-10 border-l-2 border-dashed border-[#0D4F46]/25 bg-[#0D4F46] min-w-[220px]">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#F5EDD6]"></div>
+                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#F5EDD6]"></div>
+                    <p className="text-[10px] tracking-[0.25em] uppercase text-[#C9A84C]"> Total </p>
+                    <p className="font-serif text-2xl text-white mt-1"> {guides.length} Guides </p>
+                    <Link to="/admin/add-guide">
+                        <button className="mt-5 bg-[#C9A84C] text-[#0B1F1A] text-sm font-semibold px-5 py-2 rounded-full hover:bg-[#F5EDD6] transition flex items-center gap-2">
+                            <FaPlus size={12} /> Add Guide
+                        </button>
+                    </Link>
+                </div>
             </div>
 
             {/* Search */}
             <div className="mb-6">
-                <input type="text" placeholder="Search guides..." className="w-full md:w-[400px] border border-gray-300 rounded-xl p-3 outline-none focus:border-[#0D4F46]"/>
+                <div className="relative w-full md:w-[400px]">
+                    <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-[#4B5F59]/60 text-sm" />
+                    <input
+                        type="text"
+                        placeholder="Search guides…"
+                        className="w-full bg-white text-[#0D2A24] placeholder-[#4B5F59]/60 pl-9 pr-4 py-3 rounded-full border border-[#0D4F46]/15 outline-none focus:border-[#C9A84C] text-sm"
+                    />
+                </div>
             </div>
 
-            {/* Table */}
-            <div className="bg-white rounded-2xl shadow overflow-hidden">
+            {/* Table — ledger style */}
+            <div className="bg-white rounded-2xl border border-[#0D4F46]/15 overflow-hidden">
+                <div className="px-8 py-6 border-b border-[#0D4F46]/15">
+                    <p className="uppercase tracking-[0.25em] text-xs text-[#1A7A6E] font-semibold"> Ledger </p>
+                    <h2 className="font-serif text-2xl text-[#0D2A24] mt-1"> Registered Guides </h2>
+                </div>
+
                 <table className="w-full">
-                    <thead className="bg-[#0D4F46] text-white">
-                        <tr>
-                            <th className="p-4 text-left">Guide</th>
-                            <th className="p-4 text-left">Languages</th>
-                            <th className="p-4 text-left">Experience</th>
-                            <th className="p-4 text-left">Contact</th>
-                            <th className="p-4 text-left">Rating</th>
-                            <th className="p-4 text-left">Status</th>
-                            <th className="p-4 text-center">Actions</th>
+                    <thead>
+                        <tr className="bg-[#0D4F46] text-[#F5EDD6]">
+                            <th className="px-6 py-3 text-left text-xs uppercase tracking-wide font-semibold">Guide</th>
+                            <th className="px-6 py-3 text-left text-xs uppercase tracking-wide font-semibold">Languages</th>
+                            <th className="px-6 py-3 text-left text-xs uppercase tracking-wide font-semibold">Experience</th>
+                            <th className="px-6 py-3 text-left text-xs uppercase tracking-wide font-semibold">Contact</th>
+                            <th className="px-6 py-3 text-left text-xs uppercase tracking-wide font-semibold">Rating</th>
+                            <th className="px-6 py-3 text-left text-xs uppercase tracking-wide font-semibold">Status</th>
+                            <th className="px-6 py-3 text-center text-xs uppercase tracking-wide font-semibold">Actions</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         {guides.map((guide) => (
-                            <tr key={guide.id} className="border-b hover:bg-gray-50">
-                                <td className="p-4">
+                            <tr key={guide.id} className="border-b border-[#0D4F46]/10 hover:bg-[#F5EDD6]/70">
+                                <td className="px-6 py-4">
                                     <div className="flex items-center gap-3">
-                                        <img src={guide.image} alt={guide.name} className="w-14 h-14 rounded-lg object-cover"/>
-                                        <span className="font-semibold"> {guide.name} </span>
+                                        <img src={guide.image} alt={guide.name} className="w-14 h-14 rounded-lg object-cover border border-[#0D4F46]/15" />
+                                        <span className="font-serif text-[#0D2A24]"> {guide.name} </span>
                                     </div>
                                 </td>
-                                <td className="p-4">{guide.language}</td>
-                                <td className="p-4"> {guide.experience} </td>
-                                <td className="p-4"> {guide.contact} </td>
-                                <td className="p-4"> ⭐ {guide.rating} </td>
-                                <td className="p-4">
+                                <td className="px-6 py-4 text-[#4B5F59]">{guide.language}</td>
+                                <td className="px-6 py-4 text-[#4B5F59]"> {guide.experience} </td>
+                                <td className="px-6 py-4 text-[#4B5F59]"> {guide.contact} </td>
+                                <td className="px-6 py-4 text-[#4B5F59]"> ⭐ {guide.rating} </td>
+                                <td className="px-6 py-4">
                                     <span
-                                        className={`px-3 py-1 rounded-full text-sm font-medium ${
+                                        className={`px-3 py-1 rounded-full text-xs uppercase tracking-wide font-semibold border ${
                                             guide.status === "Available"
-                                                ? "bg-green-100 text-green-700"
-                                                : "bg-yellow-100 text-yellow-700"
+                                                ? "bg-[#1A7A6E]/10 text-[#0D4F46] border-[#1A7A6E]/30"
+                                                : "bg-[#C9A84C]/15 text-[#8A6D22] border-[#C9A84C]/40"
                                         }`}>
                                         {guide.status}
                                     </span>
                                 </td>
 
-                                <td className="p-4">
+                                <td className="px-6 py-4">
                                     <div className="flex justify-center gap-3">
-                                        <button className="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"> <FaEdit /> </button>
-                                        <button className="bg-red-500 text-white p-2 rounded-lg hover:bg-red-600"> <FaTrash /> </button>
+                                        <button className="bg-[#1A7A6E]/10 text-[#0D4F46] border border-[#1A7A6E]/30 p-2 rounded-lg hover:bg-[#1A7A6E]/20 transition">
+                                            <FaEdit size={14} />
+                                        </button>
+                                        <button className="bg-[#C45A2A]/10 text-[#C45A2A] border border-[#C45A2A]/30 p-2 rounded-lg hover:bg-[#C45A2A]/20 transition">
+                                            <FaTrash size={14} />
+                                        </button>
                                     </div>
                                 </td>
                             </tr>

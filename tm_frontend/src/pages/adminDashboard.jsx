@@ -47,7 +47,7 @@ export default function AdminDashboard() {
               <NavLink to="/admin/bookings" className={navLinkClass}> <RiContactsBook3Fill size={18} /> Bookings </NavLink>
               <NavLink to="/admin/hotels" className={navLinkClass}> <LiaHotelSolid size={18} /> Hotels </NavLink>
               <NavLink to="/admin/vehicles" className={navLinkClass}> <FaCar size={18} /> Vehicles </NavLink>
-              <NavLink to="/admin/packages" className={navLinkClass}> <IoBook size={18} /> Tour Packages </NavLink>
+              <NavLink to="/admin/tour-packages" className={navLinkClass}> <IoBook size={18} /> Tour Packages </NavLink>
               <NavLink to="/admin/guides" className={navLinkClass}> <LuActivity size={18} /> Guides </NavLink>
             </div>
           </div>
