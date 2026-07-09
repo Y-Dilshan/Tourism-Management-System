@@ -27,6 +27,8 @@ import AdminBookings from "./pages/admin/adminBookings.jsx";
 import AdminTourPackages from "./pages/admin/adminTourPackages.jsx";
 import AdminUsers from "./pages/admin/adminUsers.jsx";
 import AdminReviews from "./pages/admin/adminReviews.jsx";
+import AdminReports from "./pages/admin/adminReport.jsx";
+import AdminSettings from "./pages/admin/adminSetting.jsx";
 
 function App() {
   return (
@@ -63,6 +65,8 @@ function App() {
           <Route path="tour-packages" element={<AdminTourPackages />} />
           <Route path="users" element={<AdminUsers />} />
           <Route path="reviews" element={<AdminReviews />} />
+          <Route path="reports" element={<AdminReports />} />
+          <Route path="settings" element={<AdminSettings />} />
         </Route>
 
         {/* ================= 404 Page ================= */}
