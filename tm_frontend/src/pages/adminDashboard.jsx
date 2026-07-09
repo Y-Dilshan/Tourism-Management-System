@@ -7,6 +7,7 @@ import { IoBook, IoSettings } from "react-icons/io5";
 import { LuActivity } from "react-icons/lu";
 import { MdReviews } from "react-icons/md";
 import { TbReportSearch } from "react-icons/tb";
+import { FaEnvelope } from "react-icons/fa";
 
 export default function AdminDashboard() {
   const location = useLocation();
@@ -57,6 +58,7 @@ export default function AdminDashboard() {
             <h2 className={sectionLabel}> Management </h2>
             <div className="flex flex-col gap-1">
               <NavLink to="/admin/users" className={navLinkClass}> <FaUsers size={18} /> Users </NavLink>
+              <NavLink to="/admin/messages" className={navLinkClass}> <FaEnvelope size={18} /> Messages </NavLink>
               <NavLink to="/admin/reviews" className={navLinkClass}> <MdReviews size={18} /> Reviews </NavLink>
               <NavLink to="/admin/reports" className={navLinkClass}> <TbReportSearch size={18} /> Reports </NavLink>
               <NavLink to="/admin/settings" className={navLinkClass}> <IoSettings size={18} /> Settings </NavLink>

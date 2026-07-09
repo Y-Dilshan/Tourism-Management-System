@@ -61,8 +61,8 @@ export default function Contact() {
                 <div className="w-16 h-16 rounded-full bg-[#C9A84C] text-white flex items-center justify-center text-2xl"> <FaEnvelope /> </div>
                 <div>
                   <h3 className="font-bold text-xl">Email</h3>
-                  <p className="text-gray-600 mt-1"> info@travelmate.com </p>
-                  <p className="text-gray-600"> support@travelmate.com </p>
+                  <p className="text-gray-600 mt-1"> info@golanka.com </p>
+                  <p className="text-gray-600"> support@golanka.com </p>
                 </div>
               </div>
 
