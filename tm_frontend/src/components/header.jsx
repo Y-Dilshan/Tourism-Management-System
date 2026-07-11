@@ -8,6 +8,7 @@ export default function Header() {
 
             <div className="flex gap-10 ml-[150px]">
                 <Link to="/*" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Home </Link>
+                <Link to="/about" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> About </Link>
                 <Link to="/hotels" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Hotels </Link>
                 <Link to="/vehicles" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Vehicles </Link>
                 <Link to="/tours" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Tours </Link>

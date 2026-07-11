@@ -9,18 +9,18 @@ import { Link } from "react-router-dom";
 export default function Home() {
     return(
         <div className = "w-full  flex flex-col overflow-auto overflow-x-hidden">
-            <nav className="w-full h-[100px] bg-black flex items-center pl-20 gap-5">
+            <nav className="w-full h-[100px] bg-black flex items-center px-20 gap-5">
             <img src="logo.png" alt="Logo" className="w-[80px] h-[80px]" />
             <h1 className="text-5xl text-[#C9A84C] font-bold"> GoLanka </h1>
 
             <div className="flex gap-10 ml-[150px]">
                 <Link to="/*" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Home </Link>
+                <Link to="/about" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> About </Link>
                 <Link to="/hotels" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Hotels </Link>
                 <Link to="/vehicles" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Vehicles </Link>
                 <Link to="/tours" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Tours </Link>
                 <Link to="/guides" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Guides </Link>
                 <Link to="/activities" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Activities </Link>
-                <Link to="/contact" className="text-white text-xl hover:text-[#C9A84C] cursor-pointer"> Contact </Link>
             </div>
 
             <div className="flex gap-5 mr-20">
