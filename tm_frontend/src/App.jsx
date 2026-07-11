@@ -29,6 +29,7 @@ import AdminUsers from "./pages/admin/adminUsers.jsx";
 import AdminReviews from "./pages/admin/adminReviews.jsx";
 import AdminReports from "./pages/admin/adminReport.jsx";
 import AdminSettings from "./pages/admin/adminSetting.jsx";
+import AdminMessages from "./pages/admin/adminMessage.jsx";
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
           <Route path="reviews" element={<AdminReviews />} />
           <Route path="reports" element={<AdminReports />} />
           <Route path="settings" element={<AdminSettings />} />
+          <Route path="messages" element={<AdminMessages />} />
         </Route>
 
         {/* ================= 404 Page ================= */}
