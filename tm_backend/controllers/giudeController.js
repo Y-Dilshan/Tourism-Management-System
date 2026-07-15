@@ -46,3 +46,16 @@ export const updateGuide = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
+export const deleteGuide = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deletedGuide = await guide.findByIdAndDelete(id);
+    if (!deletedGuide) {
+      return res.status(404).json({ message: "Guide not found" });
+    }
+    res.status(200).json({ message: "Guide deleted successfully" });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
