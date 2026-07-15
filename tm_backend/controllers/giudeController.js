@@ -32,3 +32,17 @@ export const getGuideById = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
+export const updateGuide = async (req, res) => {
+  const { id } = req.params;
+  const { name, email, password } = req.body;
+  try {
+    const updatedGuide = await guide.findByIdAndUpdate(id, { name, email, password }, { new: true });
+    if (!updatedGuide) {
+      return res.status(404).json({ message: "Guide not found" });
+    }
+    res.status(200).json(updatedGuide);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
