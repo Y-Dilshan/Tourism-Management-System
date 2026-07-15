@@ -19,3 +19,16 @@ export const createGuide = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 };
+
+export const getGuideById = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const guideData = await guide.findById(id);
+    if (!guideData) {
+      return res.status(404).json({ message: "Guide not found" });
+    }
+    res.status(200).json(guideData);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
