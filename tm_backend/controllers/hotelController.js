@@ -19,3 +19,17 @@ export const createHotel = async (req, res) => {
     res.status(409).json({ message: error.message });
   } 
 };
+
+export const getHotelById = async (req, res) => {
+  const { id } = req.params;
+    try {
+    const hotelData = await hotel.findById(id);
+    if (!hotelData) {
+      return res.status(404).json({ message: "Hotel not found" });
+    }
+    res.status(200).json(hotelData);
+  }
+    catch (error) { 
+        res.status(500).json({ message: error.message });
+    }
+};
