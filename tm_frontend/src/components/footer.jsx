@@ -10,7 +10,10 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h2 className="text-3xl font-bold text-[#C9A84C] mb-4"> Explore Lanka </h2>
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/logo.png" alt="Logo" className="w-[60px] h-[60px] object-cover" />
+               <h2 className="text-3xl font-bold text-[#C9A84C] mb-4"> Explore Lanka </h2>
+            </div>
             <p className="text-gray-300 leading-7"> Discover the beauty of Sri Lanka with expertly curated tours, comfortable stays, reliable transport, and unforgettable experiences. </p>
           </div>
 
@@ -49,7 +52,7 @@ export default function Footer() {
                 <FaPhoneAlt className="text-[#C9A84C]" size={16} /> <span>+94 77 123 4567</span>
               </div>
               <div className="flex items-center gap-3">
-                <MdEmail className="text-[#C9A84C]" size={20} /> <span>info@explorelanka.com</span>
+                <MdEmail className="text-[#C9A84C]" size={20} /> <span>golanka@gmail.com</span>
               </div>
             </div>
 
