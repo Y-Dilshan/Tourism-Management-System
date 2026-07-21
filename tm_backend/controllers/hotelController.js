@@ -1,8 +1,8 @@
-import hotel from '../models/hote.js';
+import Hotel from '../models/hotel.js';
 
 export const getAllHotels = async (req, res) => {
   try {
-    const hotels = await hotel.find();  
+    const hotels = await Hotel.find();  
     res.status(200).json(hotels);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -11,7 +11,7 @@ export const getAllHotels = async (req, res) => {
 
 export const createHotel = async (req, res) => {
   const { name, location, price } = req.body;
-  const newHotel = new hotel({ name, location, price });
+  const newHotel = new Hotel({ name, location, price });
     try {
     await newHotel.save();
     res.status(201).json(newHotel);
@@ -23,7 +23,7 @@ export const createHotel = async (req, res) => {
 export const getHotelById = async (req, res) => {
   const { id } = req.params;
     try {
-    const hotelData = await hotel.findById(id);
+    const hotelData = await Hotel.findById(id);
     if (!hotelData) {
       return res.status(404).json({ message: "Hotel not found" });
     }
@@ -38,7 +38,7 @@ export const updateHotel = async (req, res) => {
   const { id } = req.params;
   const { name, location, price } = req.body;
     try {
-        const updatedHotel = await hotel.findByIdAndUpdate(id, { name, location, price }, { new: true });
+        const updatedHotel = await Hotel.findByIdAndUpdate(id, { name, location, price }, { new: true });
         if (!updatedHotel) {
           return res.status(404).json({ message: "Hotel not found" });
         }
@@ -51,7 +51,7 @@ export const updateHotel = async (req, res) => {
 export const deleteHotel = async (req, res) => {
   const { id } = req.params;
     try {
-        const deletedHotel = await hotel.findByIdAndDelete(id);
+        const deletedHotel = await Hotel.findByIdAndDelete(id);
         if (!deletedHotel) {
           return res.status(404).json({ message: "Hotel not found" });
         }

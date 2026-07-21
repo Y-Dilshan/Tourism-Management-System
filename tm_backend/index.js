@@ -1,7 +1,9 @@
 import express from 'express';
 import hotelRouter from './Routes/hotelRouter.js';
 import dotenv from 'dotenv';
-dotenv.config();
+import connectDB from './config.js';
+
+dotenv.config(); // Load environment variables
 
 connectDB();
 
@@ -15,4 +17,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
