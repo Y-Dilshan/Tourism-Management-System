@@ -1,6 +1,9 @@
 import express from 'express';
 import hotelRouter from './Routes/hotelRouter.js';
 import dotenv from 'dotenv';
+dotenv.config();
+
+connectDB();
 
 const app = express();
 
