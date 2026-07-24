@@ -31,3 +31,20 @@ export const getVehicleById = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+export const updateVehicle = async (req, res) => {
+    try {
+        const { make, model, year, vin, owner } = req.body;
+        const updatedVehicle = await Vehicle.findByIdAndUpdate(
+            req.params.id,
+            { make, model, year, vin, owner },
+            { new: true }
+        );
+        if (!updatedVehicle) {
+            return res.status(404).json({ message: "Vehicle not found" });
+        }
+        res.status(200).json(updatedVehicle);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }   
+};
