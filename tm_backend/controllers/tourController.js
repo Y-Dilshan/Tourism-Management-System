@@ -83,3 +83,24 @@ export const updateTour = async (req, res) => {
         });
     }
 };
+
+export const deleteTour = async (req, res) => {
+    try {
+        const tour = await Tour.findByIdAndDelete(req.params.id);
+        if (!tour) {
+            return res.status(404).json({
+                status: 'fail',
+                message: 'Tour not found'
+            });
+        }
+        res.status(204).json({
+            status: 'success',
+            data: null
+        });
+    } catch (err) {
+        res.status(400).json({
+            status: 'fail',
+            message: err.message
+        });
+    }
+};
