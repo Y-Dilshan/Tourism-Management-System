@@ -90,17 +90,30 @@ export default function AdminAddUser() {
         setSubmitting(true);
 
         try {
-            // Replace with real API call, e.g.:
-            // const formData = new FormData();
-            // Object.entries(user).forEach(([key, val]) => formData.append(key, val));
-            // await fetch("/api/users", { method: "POST", body: formData });
+            const response = await fetch("http://localhost:3000/users", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: user.name.trim(),
+                    email: user.email.trim(),
+                    password: "defaultPassword123", // default password for admin-created user
+                    phone: user.phone.trim(),
+                    role: user.role,
+                }),
+            });
 
-            await new Promise((resolve) => setTimeout(resolve, 600));
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || "Failed to create user");
+            }
 
             alert("User Added Successfully!");
             resetForm();
         } catch (err) {
-            alert("Something went wrong while saving the user. Please try again.");
+            alert(err.message || "Something went wrong while saving the user. Please try again.");
         } finally {
             setSubmitting(false);
         }
