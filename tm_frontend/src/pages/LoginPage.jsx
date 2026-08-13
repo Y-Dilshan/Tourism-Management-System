@@ -49,7 +49,11 @@ export default function LoginPage() {
                 }
             }, 1000);
         } catch (err) {
-            setError(err.message || "An error occurred. Please check your connection.");
+            if (err.name === "TypeError" || err.message.toLowerCase().includes("fetch")) {
+                setError("Cannot connect to server (http://localhost:3000). Please make sure your backend server is running.");
+            } else {
+                setError(err.message || "An error occurred during login.");
+            }
         } finally {
             setLoading(false);
         }

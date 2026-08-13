@@ -18,12 +18,14 @@ export default function RegisterPage() {
         setError("");
         setSuccess("");
 
-        if (!firstName || !lastName || !email || !password) {
-            setError("Please fill in all required fields.");
+        if (!firstName.trim() || !email.trim() || !password) {
+            setError("Please fill in First Name, Email, and Password.");
             return;
         }
 
         setLoading(true);
+
+        const fullName = `${firstName.trim()} ${lastName.trim()}`.trim();
 
         try {
             const response = await fetch("http://localhost:3000/users/register", {
@@ -32,8 +34,10 @@ export default function RegisterPage() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    name: `${firstName.trim()} ${lastName.trim()}`,
-                    email: email.trim(),
+                    name: fullName,
+                    firstName: firstName.trim(),
+                    lastName: lastName.trim(),
+                    email: email.trim().toLowerCase(),
                     password: password,
                     phone: phone.trim(),
                 }),
@@ -50,7 +54,11 @@ export default function RegisterPage() {
                 navigate("/login");
             }, 1500);
         } catch (err) {
-            setError(err.message || "An error occurred during registration.");
+            if (err.name === "TypeError" || err.message.toLowerCase().includes("fetch")) {
+                setError("Cannot connect to server (http://localhost:3000). Please make sure your backend server is running.");
+            } else {
+                setError(err.message || "An error occurred during registration.");
+            }
         } finally {
             setLoading(false);
         }
@@ -127,10 +135,9 @@ export default function RegisterPage() {
                                 className="w-full h-[50px] shadow rounded py-2 px-3 bg-[#F5EDD6] text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#1A7A6E]"
                                 id="lastName"
                                 type="text"
-                                placeholder="Enter last name"
+                                placeholder="Enter last name (optional)"
                                 value={lastName}
                                 onChange={(e) => setLastName(e.target.value)}
-                                required
                             />
                         </div>
                     </div>
