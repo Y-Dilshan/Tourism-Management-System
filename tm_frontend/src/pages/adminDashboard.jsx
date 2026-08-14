@@ -1,8 +1,9 @@
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { MdSpaceDashboard } from "react-icons/md";
 import { RiContactsBook3Fill } from "react-icons/ri";
 import { LiaHotelSolid } from "react-icons/lia";
-import { FaCar, FaUsers } from "react-icons/fa";
+import { FaCar, FaUsers, FaSignOutAlt } from "react-icons/fa";
 import { IoBook, IoSettings } from "react-icons/io5";
 import { LuActivity } from "react-icons/lu";
 import { MdReviews } from "react-icons/md";
@@ -11,6 +12,24 @@ import { FaEnvelope } from "react-icons/fa";
 
 export default function AdminDashboard() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const [adminUser, setAdminUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      try {
+        setAdminUser(JSON.parse(storedUser));
+      } catch (err) {
+        console.error("Failed to parse admin user", err);
+      }
+    }
+  }, []);
+
+  const handleSignOut = () => {
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
 
   const isDashboard =
     location.pathname === "/admin" ||
@@ -67,12 +86,28 @@ export default function AdminDashboard() {
         </nav>
 
         {/* Admin Profile */}
-        <div className="border-t border-white/10 pt-4 flex items-center gap-3">
-          <img src="/admin.jpg" alt="admin" className="w-11 h-11 rounded-full ring-2 ring-[#C9A84C]/50 bg-gray-600" />
-          <div className="flex flex-col">
-            <h3 className="text-white text-sm font-semibold leading-tight"> Admin User </h3>
-            <p className="text-[#7FA89E] text-[11px] uppercase tracking-wide"> System Administrator </p>
+        <div className="border-t border-white/10 pt-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full ring-2 ring-[#C9A84C]/50 bg-[#C9A84C] text-[#0B1F1A] flex items-center justify-center font-bold text-lg">
+              {adminUser?.name ? adminUser.name.charAt(0).toUpperCase() : "A"}
+            </div>
+            <div className="flex flex-col">
+              <h3 className="text-white text-sm font-semibold leading-tight truncate max-w-[120px]">
+                {adminUser?.name || "Admin User"}
+              </h3>
+              <p className="text-[#7FA89E] text-[10px] uppercase tracking-wide truncate max-w-[120px]">
+                {adminUser?.email || "System Admin"}
+              </p>
+            </div>
           </div>
+
+          <button
+            onClick={handleSignOut}
+            className="text-red-400 hover:text-red-300 p-2 rounded-lg hover:bg-white/5 transition"
+            title="Sign Out"
+          >
+            <FaSignOutAlt size={16} />
+          </button>
         </div>
       </aside>
 
