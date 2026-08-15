@@ -45,7 +45,7 @@ export default function LoginPage() {
                 if (data.user?.role === "admin") {
                     navigate("/admin");
                 } else {
-                    navigate("/dashboard");
+                    navigate("/");
                 }
             }, 1000);
         } catch (err) {
