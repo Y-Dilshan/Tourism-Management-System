@@ -1,12 +1,33 @@
+import { useState, useEffect } from "react";
 import Footer from "../components/footer";
-import { FaPlay } from "react-icons/fa6";
+import { FaPlay, FaUserCircle, FaSignOutAlt } from "react-icons/fa";
 import { FaHotel } from "react-icons/fa6";
 import { BsAirplaneEnginesFill } from "react-icons/bs";
 import { IoCarSport } from "react-icons/io5";
 import { GiBookCover } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Home() {
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            try {
+                setUser(JSON.parse(storedUser));
+            } catch (err) {
+                console.error("Failed to parse user data", err);
+            }
+        }
+    }, []);
+
+    const handleSignOut = () => {
+        localStorage.removeItem("user");
+        setUser(null);
+        navigate("/login");
+    };
+
     return (
         <div className="w-full flex flex-col overflow-auto overflow-x-hidden bg-white">
             {/* Navbar */}
@@ -15,7 +36,7 @@ export default function Home() {
                 <h1 className="text-3xl lg:text-4xl text-[#C9A84C] font-bold tracking-wide">GoLanka</h1>
 
                 <div className="hidden lg:flex gap-8 ml-auto mr-auto">
-                    <Link to="/*" className="text-white text-base font-medium hover:text-[#C9A84C] transition-colors duration-200 cursor-pointer">Home</Link>
+                    <Link to="/" className="text-white text-base font-medium hover:text-[#C9A84C] transition-colors duration-200 cursor-pointer">Home</Link>
                     <Link to="/about" className="text-white text-base font-medium hover:text-[#C9A84C] transition-colors duration-200 cursor-pointer">About</Link>
                     <Link to="/hotels" className="text-white text-base font-medium hover:text-[#C9A84C] transition-colors duration-200 cursor-pointer">Hotels</Link>
                     <Link to="/vehicles" className="text-white text-base font-medium hover:text-[#C9A84C] transition-colors duration-200 cursor-pointer">Vehicles</Link>
@@ -24,17 +45,39 @@ export default function Home() {
                     <Link to="/activities" className="text-white text-base font-medium hover:text-[#C9A84C] transition-colors duration-200 cursor-pointer">Activities</Link>
                 </div>
 
-                <div className="flex gap-3 ml-auto">
-                    <Link to="/login">
-                        <button className="w-[110px] h-[40px] bg-[#1A7A6E] hover:bg-[#0D4F46] text-white text-base font-semibold rounded-full transition-colors duration-200 shadow-md cursor-pointer">
-                            Sign in
-                        </button>
-                    </Link>
-                    <Link to="/signup">
-                        <button className="w-[110px] h-[40px] bg-[#F5EDD6] hover:bg-[#C9A84C] text-black text-base font-semibold rounded-full transition-colors duration-200 shadow-md cursor-pointer">
-                            Sign Up
-                        </button>
-                    </Link>
+                <div className="flex gap-3 ml-auto items-center">
+                    {user ? (
+                        <div className="flex items-center gap-3">
+                            <Link
+                                to={user.role === "admin" ? "/admin" : "/dashboard"}
+                                className="flex items-center gap-2 bg-[#1A7A6E] hover:bg-[#0D4F46] text-white px-4 py-2 rounded-full font-semibold transition text-sm shadow"
+                            >
+                                <FaUserCircle size={18} />
+                                <span>{user.name || "My Dashboard"}</span>
+                            </Link>
+                            <button
+                                onClick={handleSignOut}
+                                className="flex items-center gap-1.5 bg-red-800/80 hover:bg-red-700 text-white px-3.5 py-2 rounded-full font-medium transition text-xs shadow cursor-pointer"
+                                title="Sign Out"
+                            >
+                                <FaSignOutAlt size={14} />
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                    ) : (
+                        <>
+                            <Link to="/login">
+                                <button className="w-[110px] h-[40px] bg-[#1A7A6E] hover:bg-[#0D4F46] text-white text-base font-semibold rounded-full transition-colors duration-200 shadow-md cursor-pointer">
+                                    Sign in
+                                </button>
+                            </Link>
+                            <Link to="/signup">
+                                <button className="w-[110px] h-[40px] bg-[#F5EDD6] hover:bg-[#C9A84C] text-black text-base font-semibold rounded-full transition-colors duration-200 shadow-md cursor-pointer">
+                                    Sign Up
+                                </button>
+                            </Link>
+                        </>
+                    )}
                 </div>
             </nav>
 
@@ -50,12 +93,16 @@ export default function Home() {
                     </span>
 
                     <div className="flex flex-wrap gap-4 mt-10">
-                        <button className="px-8 h-[52px] bg-[#C9A84C] hover:bg-[#F5EDD6] text-black text-lg font-bold rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer">
-                            Plan My Trip
-                        </button>
-                        <button className="px-8 h-[52px] bg-transparent hover:bg-white/10 text-white text-lg font-bold rounded-full border-2 border-[#F5EDD6] flex items-center justify-center gap-3 transition-all duration-200 cursor-pointer">
-                            <FaPlay size={18} /> Watch Island Story
-                        </button>
+                        <Link to="/tours">
+                            <button className="px-8 h-[52px] bg-[#C9A84C] hover:bg-[#F5EDD6] text-black text-lg font-bold rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer">
+                                Plan My Trip
+                            </button>
+                        </Link>
+                        <Link to="/tours">
+                            <button className="px-8 h-[52px] bg-transparent hover:bg-white/10 text-white text-lg font-bold rounded-full border-2 border-[#F5EDD6] flex items-center justify-center gap-3 transition-all duration-200 cursor-pointer">
+                                <FaPlay size={18} /> Watch Island Story
+                            </button>
+                        </Link>
                     </div>
 
                     <hr className="border-[#F5EDD6]/30 mt-14" />
