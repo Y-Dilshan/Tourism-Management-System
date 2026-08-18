@@ -3,21 +3,26 @@ import User from "../models/user.js";
 // Create / Register User
 export const createUser = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    let { name, firstName, lastName, email, password, phone, role } = req.body;
 
-    if (!name || !email || !password) {
+    const userName = name ? name.trim() : (firstName || lastName ? `${firstName || ""} ${lastName || ""}`.trim() : "");
+
+    if (!userName || !email || !password) {
       return res.status(400).json({ message: "Please provide name, email, and password." });
     }
 
-    const existingUser = await User.findOne({ email: email.toLowerCase() });
+    const cleanEmail = email.toLowerCase().trim();
+
+    const existingUser = await User.findOne({ email: cleanEmail });
     if (existingUser) {
       return res.status(400).json({ message: "User already exists with this email." });
     }
 
     const newUser = new User({
-      name,
-      email: email.toLowerCase(),
+      name: userName,
+      email: cleanEmail,
       password,
+      phone: phone ? phone.trim() : "",
       role: role || "user",
     });
 
@@ -27,6 +32,7 @@ export const createUser = async (req, res) => {
       _id: newUser._id,
       name: newUser.name,
       email: newUser.email,
+      phone: newUser.phone,
       role: newUser.role,
     };
 

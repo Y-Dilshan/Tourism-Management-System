@@ -16,7 +16,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/hotels', hotelRouter);
+app.use('/api/hotels', hotelRouter);
 app.use('/users', userRouter);
+app.use('/api/users', userRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
